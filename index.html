@@ -5,74 +5,84 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pagina Web</title>
-    <link rel="stylesheet" href="js/js.js">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #2c2c2c;
-            margin: 20px;
-        }
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 20px;
+}
 
-        .contenido {
-            max-width: 1200px;
-            margin: auto;
-            background: #3d3d3d;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
+.contenido {
+    max-width: 1200px;
+    margin: auto;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 
-        h1 {
-            text-align: center;
-            color: #ffffff;
-            font-size: 38px;
-            margin-bottom: 20px;
-        }
+h1 {
+    text-align: center;
+    color: #333333;
+    font-size: 38px;
+    margin-bottom: 20px;
+}
 
-        .cuadro {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
+.cuadro {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
 
-        .tarjeta {
-            background: #696969;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
+.tarjeta {
+    background: #f1f3f5;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.3s ease-in-out;
+}
 
-        .pregunta {
-            font-weight: bold;
-            font-size: 18px;
-            margin-bottom: 10px;
-        }
+.pregunta {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333333;
+}
 
-        .respuesta {
-            background: #8b8b8b;
-            padding: 10px;
-            border-radius: 5px;
-            border-left: 5px solid #000000;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-        }
+.respuesta {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out;
+}
 
-        .tarjeta:hover {
-            background: #dfe6ee;
-            transform: translateY(-5px);
-            transition: all 0.3s ease-in-out;
+.respuesta.activa {
+    padding: 10px;
+    border-left: 5px solid #007bff;
+}
 
-        }
 
-        .pregunta {
-            transition: transform 0.2s ease-out;
-        }
+
+
+.tarjeta:hover {
+    background: #dee2e6;
+    transform: translateY(-5px);
+}
+
+.pregunta {
+    transition: transform 0.2s ease-out;
+}
+h4{
+text-align: center;}
+
     </style>
 </head>
 
 <body>
+    <h1 class="Titulo">Portafolio - Sandoval</h1>
+    <h4>para ver las respuestas clickea en la pregunta</h4>
     <div class="contenido">
         <h1>Preguntas HTML</h1>
         <div class="cuadro">
@@ -106,6 +116,91 @@
             </div>
         </div>
     </div>
+
+    <div class="contenido">
+        <h1>Preguntas CSS</h1>
+        <div class="cuadro">
+            <div class="tarjeta">
+                <div class="pregunta">¿Qué es CSS y cómo se utiliza para dar estilo a una página web?</div>
+                <div class="respuesta">CSS (Cascading Style Sheets) es un lenguaje de estilos que se usa para dar diseño y formato a una página web mediante reglas que afectan la apariencia de los elementos HTML.</div>
+            </div>
+            <div class="tarjeta">
+                <div class="pregunta">¿Cuáles son las propiedades más importantes de CSS?</div>
+                <div class="respuesta">Las propiedades más importantes de CSS incluyen color, font-size, margin, padding, display, position, width y height.</div>
+            </div>
+            <div class="tarjeta">
+                <div class="pregunta">Explica el modelo de caja (box model) en CSS.</div>
+                <div class="respuesta">
+                    El modelo de caja en CSS representa cómo los elementos HTML se estructuran en rectángulos con content, padding, border y margin.
+                </div>
+            </div>
+            <div class="tarjeta">
+                <div class="pregunta">¿Qué es el diseño responsivo y cómo se logra con CSS?</div>
+                <div class="respuesta">
+                    El diseño responsivo permite que una web se adapte a diferentes tamaños de pantalla y se logra con media queries, flexbox, grid y unidades relativas como % y rem.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="contenido">
+        <h1>Preguntas sobre JavaScript</h1>
+        <div class="cuadro">
+            <div class="tarjeta">
+                <div class="pregunta">¿Qué es JavaScript y cómo se integra en el desarrollo web?</div>
+                <div class="respuesta">
+                    JavaScript es un lenguaje de programación que permite agregar interactividad a las páginas web. Se integra en el desarrollo web mediante scripts que pueden estar dentro del HTML (en etiquetas &lt;script&gt;) o en archivos externos.
+                </div>
+            </div>
+            <div class="tarjeta">
+                <div class="pregunta">Explica cómo JavaScript interactúa con el HTML y CSS a través del DOM (Document Object Model).</div>
+                <div class="respuesta">
+                    JavaScript interactúa con HTML y CSS a través del DOM (Document Object Model), que representa la estructura de la página web como un árbol de nodos. Con JavaScript, se pueden modificar los elementos, cambiar estilos, agregar o eliminar contenido dinámicamente.
+                </div>
+            </div>
+            <div class="tarjeta">
+                <div class="pregunta">Proporciona ejemplos de cómo JavaScript puede hacer que una página web sea interactiva.</div>
+                <div class="respuesta">
+                    Algunos ejemplos incluyen:
+                    <ul>
+                        <li>Mostrar u ocultar elementos con eventos como clics.</li>
+                        <li>Validar formularios antes de enviarlos.</li>
+                        <li>Cambiar el contenido de la página sin recargarla (AJAX).</li>
+                        <li>Crear efectos visuales como animaciones y transiciones.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="contenido">
+        <h1>Preguntas sobre Git y GitHub</h1>
+        <div class="cuadro">
+            <div class="tarjeta">
+                <div class="pregunta">¿Qué es Git y por qué es importante para el desarrollo web?</div>
+                <div class="respuesta">
+                    Git es un sistema de control de versiones distribuido que permite gestionar cambios en el código fuente de un proyecto. Es importante en el desarrollo web porque facilita el seguimiento de modificaciones, permite trabajar en equipo sin conflictos y mantiene un historial de versiones.
+                </div>
+            </div>
+            <div class="tarjeta">
+                <div class="pregunta">Explica cómo Git se usa para el control de versiones en proyectos de desarrollo web.</div>
+                <div class="respuesta">
+                    Git permite gestionar versiones de un proyecto mediante comandos como <code>git init</code>, <code>git add</code>, <code>git commit</code> y <code>git push</code>. Con Git, los desarrolladores pueden trabajar en ramas separadas, fusionar cambios y revertir errores sin afectar la versión principal del código.
+                </div>
+            </div>
+            <div class="tarjeta">
+                <div class="pregunta">¿Qué es GitHub y cómo facilita la colaboración en proyectos web?</div>
+                <div class="respuesta">
+                    GitHub es una plataforma basada en la nube que permite alojar repositorios Git y facilita la colaboración entre desarrolladores. Ofrece herramientas como pull requests, issues y revisión de código, lo que permite a los equipos trabajar de manera eficiente en proyectos web compartidos.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/js.js"></script>
+
+    
 </body>
 
 </html>

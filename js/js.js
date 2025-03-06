@@ -1,9 +1,19 @@
-document.addEventListener("scroll", function () {
+document.addEventListener("DOMContentLoaded", function () {
     let preguntas = document.querySelectorAll(".pregunta");
 
     preguntas.forEach(pregunta => {
-        let speed = 0.5; // Ajusta la velocidad del efecto
-        let yOffset = window.scrollY * speed;
-        pregunta.style.transform = `translateY(${yOffset}px)`;
+        pregunta.addEventListener("click", function () {
+            let respuesta = this.nextElementSibling;
+
+            // Alternar clase "activa" para la animación
+            respuesta.classList.toggle("activa");
+
+            // Alternar altura para animar
+            if (respuesta.classList.contains("activa")) {
+                respuesta.style.maxHeight = respuesta.scrollHeight + "px";
+            } else {
+                respuesta.style.maxHeight = null;
+            }
+        });
     });
 });

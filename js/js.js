@@ -4,11 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     preguntas.forEach(pregunta => {
         pregunta.addEventListener("click", function () {
             let respuesta = this.nextElementSibling;
-
-            // Alternar clase "activa" para la animación
             respuesta.classList.toggle("activa");
-
-            // Alternar altura para animar
             if (respuesta.classList.contains("activa")) {
                 respuesta.style.maxHeight = respuesta.scrollHeight + "px";
             } else {
